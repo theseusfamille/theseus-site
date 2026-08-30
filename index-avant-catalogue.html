@@ -1,0 +1,3320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Theseus Design | Création graphique & Sérigraphie</title>
+
+    <meta name="description" content="Theseus Design — Création graphique, sérigraphie et personnalisation de T-shirts.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            height: 75px;
+            padding: 0 25px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            height: 55px;
+        }
+
+        .logo img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo span {
+            color: #d4af37;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 25px 80px;
+            background:
+                radial-gradient(circle at top right, rgba(212,175,55,0.18), transparent 35%),
+                radial-gradient(circle at bottom left, rgba(212,175,55,0.10), transparent 35%),
+                #080808;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            animation: fadeUp 1s ease;
+        }
+
+        .hero-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 25px;
+            animation: logoAppear 1s ease-out;
+        }
+
+        .hero-logo img {
+            width: min(260px, 65vw);
+            height: auto;
+            max-height: 180px;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 25px rgba(0,0,0,.35));
+        }
+
+        @keyframes logoAppear {
+            from {
+                opacity: 0;
+                transform: translateY(-25px) scale(.92);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .badge {
+            display: inline-block;
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 9vw, 90px);
+            line-height: 0.95;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #d4af37;
+        }
+
+        .hero p {
+            color: #bdbdbd;
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+        }
+
+        .hero-buttons {
+            margin-top: 35px;
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .btn-gold {
+            background: #d4af37;
+            color: #080808;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212,175,55,0.25);
+        }
+
+        .btn-outline {
+            border: 1px solid #444;
+            color: #fff;
+        }
+
+        .btn-outline:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 90px 25px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #d4af37;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            color: #999;
+            margin-top: 10px;
+        }
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+            background: #0d0d0d;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+        }
+
+        .service {
+            background: #151515;
+            border: 1px solid #242424;
+            padding: 28px 18px;
+            border-radius: 14px;
+            text-align: center;
+            transition: 0.35s;
+        }
+
+        .service:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+        }
+
+        .service-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .service h3 {
+            font-size: 16px;
+        }
+
+        .service p {
+            color: #888;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================= */
+
+        .products {
+            background: #080808;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product {
+            background: #121212;
+            border: 1px solid #252525;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.35s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: #d4af37;
+        }
+
+        .product-image {
+            height: 220px;
+            background: #1c1c1c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-size: 13px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-info {
+            padding: 18px;
+        }
+
+        .product-info h3 {
+            font-size: 17px;
+        }
+
+        .price {
+            color: #d4af37;
+            font-size: 20px;
+            font-weight: 900;
+            margin: 8px 0 15px;
+        }
+
+        .order {
+            display: block;
+            text-align: center;
+            background: #d4af37;
+            color: #080808;
+            padding: 10px;
+            border-radius: 7px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           GALLERY
+        ========================= */
+
+        .gallery {
+            background: #0d0d0d;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-item {
+            height: 270px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #181818;
+            border: 1px solid #242424;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+        }
+
+        .gallery-placeholder {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: #080808;
+        }
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            background: #121212;
+            border: 1px solid #252525;
+            border-radius: 18px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .contact-box p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .contact-item {
+            padding: 13px;
+            background: #1a1a1a;
+            border-radius: 8px;
+            color: #ddd;
+        }
+
+        .contact-item span {
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            border-top: 1px solid #222;
+            background: #050505;
+            padding: 35px 25px;
+            text-align: center;
+        }
+
+        footer strong {
+            color: #d4af37;
+        }
+
+        footer p {
+            color: #666;
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .socials {
+            margin-top: 18px;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .socials a {
+            border: 1px solid #333;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            border-color: #d4af37;
+            color: #d4af37;
+        }
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                height: 65px;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 65px;
+                left: 0;
+                width: 100%;
+                background: #0b0b0b;
+                display: none;
+                flex-direction: column;
+                padding: 20px 25px;
+                gap: 18px;
+                border-bottom: 1px solid #222;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            section {
+                padding: 70px 18px;
+            }
+
+            .section-title h2 {
+                font-size: 30px;
+            }
+
+            .service-grid,
+            .product-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-image {
+                height: 250px;
+            }
+
+            .gallery-item {
+                height: 300px;
+            }
+
+            .contact-box {
+                padding: 25px 18px;
+            }
+        }
+    
+.identity-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.identity-logo {
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    display: block;
+    margin: 20px auto;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,.25));
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="navbar">
+
+        <a href="#accueil" class="logo">
+            <img src="images/logo.png" alt="Theseus Design">
+        </a>
+
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+        <nav id="menu">
+            <a href="#accueil" onclick="closeMenu()">Accueil</a>
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#catalogue" onclick="closeMenu()">Catalogue</a>
+            <a href="#galerie" onclick="closeMenu()">Galerie</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     ACCUEIL
+========================= -->
+
+<section class="hero" id="accueil">
+
+    <div class="hero-content">
+
+        <div class="hero-logo">
+            <img src="images/logo.png" alt="Logo Theseus Design">
+        </div>
+
+        <div class="badge">
+            CRÉATION • DESIGN • IMPRESSION
+        </div>
+
+        <h1>
+            THESEUS<br>
+            <span>DESIGN</span>
+        </h1>
+
+        <p>
+            Création graphique & sérigraphie.
+            Nous transformons vos idées en visuels uniques,
+            professionnels et mémorables.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a class="btn btn-gold"
+               href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20passer%20une%20commande."
+               target="_blank">
+                Commander sur WhatsApp
+            </a>
+
+            <a class="btn btn-outline" href="#catalogue">
+                Voir le catalogue
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Notre savoir-faire</span>
+            <h2>Nos services</h2>
+            <p>Des solutions créatives pour particuliers, artistes et entreprises.</p>
+        </div>
+
+        <div class="service-grid">
+
+            <div class="service">
+                <div class="service-icon">🎨</div>
+                <h3>Création de logos</h3>
+                <p>Identité visuelle professionnelle.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">🖥️</div>
+                <h3>Design graphique</h3>
+                <p>Visuels modernes et impactants.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">👕</div>
+                <h3>Sérigraphie</h3>
+                <p>Impression sur vêtements.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">✨</div>
+                <h3>Personnalisation</h3>
+                <p>T-shirts et objets personnalisés.</p>
+            </div>
+
+            <div class="service">
+                <div class="service-icon">📢</div>
+                <h3>Affiches & Flyers</h3>
+                <p>Communication visuelle professionnelle.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CATALOGUE
+========================= -->
+
+<section class="products" id="catalogue">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Nos produits</span>
+            <h2>Catalogue & Tarifs</h2>
+            <p>Choisissez votre produit puis contactez-nous directement.</p>
+        </div>
+
+        <div class="product-grid">
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/tshirt.jpg"
+                         alt="T-shirt">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>T-shirt</h3>
+
+                    <div class="price">
+                        2 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20%C3%A0%202000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/tshirt220.jpg"
+                         alt="T-shirt 220g">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>T-shirt 220g</h3>
+
+                    <div class="price">
+                        2 500 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20220g%20%C3%A0%202500%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/tshirt240.jpg"
+                         alt="T-shirt 240g">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>T-shirt 240g</h3>
+
+                    <div class="price">
+                        3 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20240g%20%C3%A0%203000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/tshirt-original.jpg"
+                         alt="T-shirt Original">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>T-shirt Original</h3>
+
+                    <div class="price">
+                        6 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20Original%20%C3%A0%206000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/lmu.jpg"
+                         alt="L M U">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>L M U</h3>
+
+                    <div class="price">
+                        5 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20L%20M%20U%20%C3%A0%205000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/lacoste.jpg"
+                         alt="Lacoste">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Lacoste</h3>
+
+                    <div class="price">
+                        5 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Lacoste%20%C3%A0%205000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/boll.jpg"
+                         alt="Boll">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Boll</h3>
+
+                    <div class="price">
+                        10 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Boll%20%C3%A0%2010000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/achete.jpg"
+                         alt="Achet">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Achet</h3>
+
+                    <div class="price">
+                        7 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Achet%20%C3%A0%207000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/pochette.jpg"
+                         alt="Pochette">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Pochette</h3>
+
+                    <div class="price">
+                        10 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20une%20Pochette%20%C3%A0%2010000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/autocollant.jpg"
+                         alt="Autocollant">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Autocollant — 1 mètre</h3>
+
+                    <div class="price">
+                        3 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20autocollant%20d%201%20m%C3%A8tre%20%C3%A0%203000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/tapis.jpg"
+                         alt="Tapis">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Tapis</h3>
+
+                    <div class="price">
+                        20 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Tapis%20%C3%A0%2020000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+                    <img src="images/porte-cle.jpg"
+                         alt="Porte-clé">
+                </div>
+
+                <div class="product-info">
+
+                    <h3>Porte-clé</h3>
+
+                    <div class="price">
+                        1 000 FCFA
+                    </div>
+
+                    <a class="order"
+                       href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Porte-cl%C3%A9%20%C3%A0%201000%20FCFA."
+                       target="_blank">
+                        Commander
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALERIE
+========================= -->
+
+<section class="gallery" id="galerie">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Portfolio</span>
+            <h2>Nos créations</h2>
+            <p>Une sélection de travaux réalisés par Theseus Design.</p>
+        </div>
+
+        <div class="gallery-grid">
+
+
+            <div class="gallery-item">
+                <img src="images/Jeudi.png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&qu>
+            </div>                <img src="images/Jeudi.png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&quot;>Votre création 01</div>';">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Nouveau mois.png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&quot;>Votre création 02</div>';">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Nouveau projet (1).png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&quot;>Votre création 03</div>';">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Nouveau projet (2).png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&quot;>Votre création 04</div>';">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Nouveau promotionnel.png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&quot;>Votre création 05</div>';">
+            </div>
+
+            <div class="gallery-item">
+                <img src="images/Sira HBD.png"
+                     alt="Création Theseus Design"
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=&quot;gallery-placeholder&quot;>Votre création 06</div>';">
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <span>Parlons de votre projet</span>
+            <h2>Contact</h2>
+        </div>
+
+        <div class="contact-box">
+
+            <h3>Theseus Design</h3>
+
+            <p>
+                Une idée ? Un projet ? Une commande ?
+                Contactez-nous directement.
+            </p>
+
+            <div class="contact-list">
+
+                <div class="contact-item">
+                    <span>WhatsApp :</span>
+                    +223 61 20 64 15
+                </div>
+
+                <div class="contact-item">
+                    <span>WhatsApp :</span>
+                    +223 73 34 48 97
+                </div>
+
+                <div class="contact-item">
+                    <span>Email :</span>
+                    theseusfamille@gmaile.com
+                </div>
+
+            </div>
+
+            <a class="btn btn-gold"
+               href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20parler%20d%27un%20projet."
+               target="_blank">
+                💬 Nous contacter sur WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <strong>THESEUS DESIGN</strong>
+
+    <p>
+        Création graphique • Sérigraphie • Personnalisation
+    </p>
+
+    <div class="socials">
+
+        <a href="https://instagram.com/theseus_design_officiel"
+           target="_blank">
+            Instagram
+        </a>
+
+        <a href="https://www.tiktok.com/@theseus_officiel"
+           target="_blank">
+            TikTok
+        </a>
+
+        <a href="https://www.facebook.com/"
+           target="_blank">
+            Facebook — Pap Che Theseus
+        </a>
+
+    </div>
+
+    <p style="margin-top:25px;">
+        © 2026 Theseus Design. Tous droits réservés.
+    </p>
+
+</footer>
+
+
+<script>
+
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("active");
+    }
+
+    function closeMenu() {
+        document.getElementById("menu").classList.remove("active");
+    }
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Theseus Design | Création graphique & Sérigraphie</title>
+
+<meta name="description" content="Theseus Design - Création graphique, sérigraphie et personnalisation.">
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #070707;
+    color: white;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+:root {
+    --gold: #d4af37;
+    --gold-light: #f4d875;
+    --black: #070707;
+    --dark: #101010;
+    --dark2: #171717;
+    --gray: #aaa;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    0%,100% {
+        box-shadow: 0 0 10px rgba(212,175,55,.1);
+    }
+
+    50% {
+        box-shadow: 0 0 35px rgba(212,175,55,.3);
+    }
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(5,5,5,.94);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(212,175,55,.2);
+}
+
+nav {
+    max-width: 1150px;
+    height: 75px;
+    margin: auto;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    font-size: 14px;
+    transition: .3s;
+}
+
+.menu a:hover {
+    color: var(--gold);
+}
+
+
+/* MENU MOBILE */
+
+.menu-button {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: white;
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding: 140px 20px 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(212,175,55,.18),
+        transparent 45%),
+        #070707;
+}
+
+.hero-content {
+    max-width: 900px;
+    animation: fadeUp 1s ease;
+}
+
+.hero small {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 11vw, 100px);
+    line-height: .95;
+    margin: 20px 0;
+
+    letter-spacing: -5px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero h2 {
+    font-size: clamp(20px, 4vw, 32px);
+    font-weight: 400;
+}
+
+.hero p {
+    color: var(--gray);
+    max-width: 650px;
+    margin: 25px auto;
+}
+
+.buttons {
+    margin-top: 30px;
+
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 14px 24px;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: .3s;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: black;
+}
+
+.btn-gold:hover {
+    background: var(--gold-light);
+    transform: translateY(-4px);
+}
+
+.btn-outline {
+    border: 1px solid var(--gold);
+    color: var(--gold);
+}
+
+.btn-outline:hover {
+    background: var(--gold);
+    color: black;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 90px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title small {
+    color: var(--gold);
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: clamp(32px, 6vw, 48px);
+    margin-top: 8px;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: var(--dark);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-text h3 {
+    color: var(--gold);
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.brand {
+    min-height: 320px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(212,175,55,.3);
+    border-radius: 15px;
+
+    animation: glow 4s infinite;
+}
+
+.brand strong {
+    font-size: 100px;
+    color: var(--gold);
+    letter-spacing: -10px;
+}
+
+.brand p {
+    letter-spacing: 4px;
+    color: #aaa;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    background: #090909;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.service {
+    padding: 30px;
+
+    background: var(--dark2);
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    transition: .35s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.service-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.service h3 {
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.service p {
+    color: #999;
+}
+
+
+/* =========================
+   CATALOGUE
+========================= */
+
+.catalogue {
+    background: var(--dark);
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 22px;
+}
+
+.product {
+    overflow: hidden;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+    border-radius: 12px;
+
+    transition: .35s;
+}
+
+.product:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.product-image {
+    height: 210px;
+
+    background:
+        linear-gradient(135deg,#191919,#0d0d0d);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: .4s;
+}
+
+.product:hover img {
+    transform: scale(1.08);
+}
+
+.placeholder {
+    text-align: center;
+    color: #666;
+}
+
+.placeholder strong {
+    display: block;
+    color: var(--gold);
+    font-size: 30px;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+.product-info h3 {
+    margin-bottom: 7px;
+}
+
+.product-info p {
+    color: #999;
+    font-size: 14px;
+}
+
+.product-bottom {
+    margin-top: 18px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: var(--gold);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.order {
+    padding: 9px 14px;
+
+    background: var(--gold);
+    color: black;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.order:hover {
+    background: var(--gold-light);
+}
+
+
+/* =========================
+   GALERIE
+========================= */
+
+.gallery-section {
+    background: #090909;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 18px;
+}
+
+.gallery-item {
+    height: 250px;
+
+    overflow: hidden;
+
+    background: #151515;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+
+    transition: .35s;
+}
+
+.gallery-item:hover {
+    border-color: var(--gold);
+    transform: scale(1.02);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: .4s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.07);
+}
+
+.gallery-placeholder {
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    color: #666;
+}
+
+.gallery-placeholder strong {
+    display: block;
+    color: var(--gold);
+}
+
+
+/* =========================
+   RESEAUX
+========================= */
+
+.social {
+    background: var(--dark);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 15px;
+}
+
+.social-card {
+    padding: 25px 10px;
+
+    text-align: center;
+
+    background: #111;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+
+    transition: .3s;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.social-icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.social-card h3 {
+    color: var(--gold);
+}
+
+.social-card p {
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+    background: #080808;
+}
+
+.contact-description {
+    max-width: 650px;
+    margin: auto;
+    color: #999;
+}
+
+.contact-grid {
+    max-width: 750px;
+    margin: 40px auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.contact-card {
+    padding: 22px;
+
+    background: #121212;
+
+    border: 1px solid #292929;
+    border-radius: 10px;
+}
+
+.contact-card strong {
+    display: block;
+    color: var(--gold);
+    margin-bottom: 5px;
+}
+
+.contact-card a:hover {
+    color: var(--gold);
+}
+
+.full {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+
+    text-align: center;
+
+    background: #030303;
+
+    border-top: 1px solid #222;
+
+    color: #777;
+}
+
+footer strong {
+    color: var(--gold);
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
+.whatsapp {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #25D366;
+
+    font-size: 28px;
+
+    z-index: 999;
+
+    box-shadow: 0 5px 25px rgba(0,0,0,.5);
+
+    transition: .3s;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:800px) {
+
+    .menu-button {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        display: none;
+        flex-direction: column;
+
+        gap: 0;
+
+        background: #080808;
+
+        border-bottom: 1px solid #292929;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        border-top: 1px solid #222;
+    }
+
+    .menu a {
+        display: block;
+        padding: 15px 25px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .social-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: auto;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav>
+
+    <div class="logo">
+        <img src="images/logo.png" alt="Theseus Design">
+    </div>
+
+    <button class="menu-button" onclick="toggleMenu()">
+        ☰
+    </button>
+
+    <ul class="menu" id="menu">
+
+        <li><a href="#accueil">Accueil</a></li>
+
+        <li><a href="#apropos">À propos</a></li>
+
+        <li><a href="#services">Services</a></li>
+
+        <li><a href="#catalogue">Catalogue</a></li>
+
+        <li><a href="#galerie">Galerie</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+    </ul>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="accueil">
+
+<div class="hero-content">
+
+    <small>
+        CRÉATIVITÉ • QUALITÉ • IDENTITÉ
+    </small>
+
+    <h1>
+        THESEUS <span>DESIGN</span>
+    </h1>
+
+    <h2>
+        Création graphique & Sérigraphie
+    </h2>
+
+    <p>
+        Donnez vie à vos idées avec des créations graphiques,
+        des vêtements personnalisés et une communication visuelle
+        professionnelle.
+    </p>
+
+    <div class="buttons">
+
+        <a href="#catalogue" class="btn btn-gold">
+            Découvrir nos produits
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+            Nous contacter
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     A PROPOS
+========================= -->
+
+<section class="about" id="apropos">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>NOTRE IDENTITÉ</small>
+
+    <h2>Theseus Design</h2>
+
+</div>
+
+
+<div class="about-grid">
+
+<div class="about-text">
+
+    <h3>Créer une identité. Marquer les esprits.</h3>
+
+    <p>
+        Theseus Design est un studio spécialisé dans la création
+        graphique, la communication visuelle, la sérigraphie
+        et la personnalisation.
+    </p>
+
+    <p>
+        Nous accompagnons artistes, entreprises, associations,
+        événements et particuliers dans leurs projets créatifs.
+    </p>
+
+    <p>
+        Notre vision : transformer une idée simple en une création
+        forte, moderne et professionnelle.
+    </p>
+
+</div>
+
+
+<div class="brand">
+
+    <img src="images/logo.png" alt="Logo Theseus Design" class="identity-logo">
+
+    <p>THESEUS DESIGN</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>NOS COMPÉTENCES</small>
+
+    <h2>Nos services</h2>
+
+</div>
+
+
+<div class="services-grid">
+
+
+<div class="service">
+
+    <div class="service-icon">🎨</div>
+
+    <h3>Design graphique</h3>
+
+    <p>
+        Création de visuels professionnels pour vos projets,
+        marques et communications.
+    </p>
+
+</div>
+
+
+<div class="service">
+
+    <div class="service-icon">✏️</div>
+
+    <h3>Logo & identité</h3>
+
+    <p>
+        Création de logos, signatures visuelles et identités
+        graphiques.
+    </p>
+
+</div>
+
+
+<div class="service">
+
+    <div class="service-icon">👕</div>
+
+    <h3>Sérigraphie</h3>
+
+    <p>
+        Impression et personnalisation de vêtements.
+    </p>
+
+</div>
+
+
+<div class="service">
+
+    <div class="service-icon">🖼️</div>
+
+    <h3>Affiches & flyers</h3>
+
+    <p>
+        Supports de communication pour événements,
+        artistes et entreprises.
+    </p>
+
+</div>
+
+
+<div class="service">
+
+    <div class="service-icon">📱</div>
+
+    <h3>Réseaux sociaux</h3>
+
+    <p>
+        Création de contenus adaptés à Instagram,
+        TikTok, Facebook et YouTube.
+    </p>
+
+</div>
+
+
+<div class="service">
+
+    <div class="service-icon">✨</div>
+
+    <h3>Personnalisation</h3>
+
+    <p>
+        Personnalisation de produits selon votre projet.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CATALOGUE
+========================= -->
+
+<section class="catalogue" id="catalogue">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>PRODUITS</small>
+
+    <h2>Notre catalogue</h2>
+
+</div>
+
+
+<div class="products">
+
+
+<!-- T-SHIRT -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>T-shirt</h3>
+
+    <p>
+        T-shirt personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            2 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20%C3%A0%202000%20FCFA.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- T-SHIRT 180G -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>T-shirt 180g</h3>
+
+    <p>
+        T-shirt 180g personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            2 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20180g.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- T-SHIRT 220G -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>T-shirt 220g</h3>
+
+    <p>
+        T-shirt 220g personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            2 500 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20220g.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- T-SHIRT 240G -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>T-shirt 240g</h3>
+
+    <p>
+        T-shirt 240g personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            3 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20240g.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ORIGINAL -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>T-shirt Original</h3>
+
+    <p>
+        T-shirt original.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            6 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20T-shirt%20Original.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- LMU -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>L M U</h3>
+
+    <p>
+        Produit personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            5 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20produit%20L%20M%20U.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- LACOSTE -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👕</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Lacoste</h3>
+
+    <p>
+        Produit personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            5 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Lacoste.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- BOLL -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>✨</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Boll</h3>
+
+    <p>
+        Produit personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            10 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Boll.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ACHET -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>✨</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Achet</h3>
+
+    <p>
+        Produit personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            7 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Achet.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- POCHETTE -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>👜</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Pochette</h3>
+
+    <p>
+        Pochette personnalisable.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            10 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20une%20Pochette.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- AUTOCOLLANT -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>🏷️</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Autocollant — 1 mètre</h3>
+
+    <p>
+        Autocollant personnalisé.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            3 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20autocollant%20de%201%20m%C3%A8tre.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- TAPIS -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>🏠</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Tapis</h3>
+
+    <p>
+        Tapis personnalisé.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            20 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Tapis.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ENSEMBLE 1 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>📦</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Ensemble 1 — 8 pièces</h3>
+
+    <p>
+        Ensemble personnalisé.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            25 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Ensemble%201%20de%208%20pi%C3%A8ces.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- ENSEMBLE 2 -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>📦</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Ensemble 2 — 7 pièces</h3>
+
+    <p>
+        Ensemble personnalisé.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            15 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Ensemble%202%20de%207%20pi%C3%A8ces.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- DRAPS -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>🛏️</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Draps</h3>
+
+    <p>
+        Draps personnalisés.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            15 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20des%20Draps.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- PORTE CLE -->
+
+<div class="product">
+
+<div class="product-image">
+
+    <div class="placeholder">
+        <strong>🔑</strong>
+        Photo à ajouter
+    </div>
+
+</div>
+
+<div class="product-info">
+
+    <h3>Porte-clé</h3>
+
+    <p>
+        Porte-clé personnalisé.
+    </p>
+
+    <div class="product-bottom">
+
+        <span class="price">
+            1 000 FCFA
+        </span>
+
+        <a
+        class="order"
+        target="_blank"
+        href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20commander%20un%20Porte-cl%C3%A9.">
+
+            Commander
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     GALERIE
+========================= -->
+
+<section class="gallery-section" id="galerie">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>PORTFOLIO</small>
+
+    <h2>Nos créations</h2>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="gallery-item">
+
+    <div class="gallery-placeholder">
+
+        <div>
+            <strong>CRÉATION 01</strong>
+            Votre image ici
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="gallery-item">
+
+    <div class="gallery-placeholder">
+
+        <div>
+            <strong>CRÉATION 02</strong>
+            Votre image ici
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="gallery-item">
+
+    <div class="gallery-placeholder">
+
+        <div>
+            <strong>CRÉATION 03</strong>
+            Votre image ici
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="gallery-item">
+
+    <div class="gallery-placeholder">
+
+        <div>
+            <strong>CRÉATION 04</strong>
+            Votre image ici
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="gallery-item">
+
+    <div class="gallery-placeholder">
+
+        <div>
+            <strong>CRÉATION 05</strong>
+            Votre image ici
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="gallery-item">
+
+    <div class="gallery-placeholder">
+
+        <div>
+            <strong>CRÉATION 06</strong>
+            Votre image ici
+        </div>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     RESEAUX
+========================= -->
+
+<section class="social">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>SUIVEZ-NOUS</small>
+
+    <h2>Nos réseaux sociaux</h2>
+
+</div>
+
+
+<div class="social-grid">
+
+
+<a
+href="https://www.instagram.com/theseus_design_officiel/"
+target="_blank"
+class="social-card">
+
+    <div class="social-icon">📸</div>
+
+    <h3>Instagram</h3>
+
+    <p>@theseus_design_officiel</p>
+
+</a>
+
+
+<a
+href="https://www.tiktok.com/@theseus_officiel"
+target="_blank"
+class="social-card">
+
+    <div class="social-icon">🎵</div>
+
+    <h3>TikTok</h3>
+
+    <p>@theseus_officiel</p>
+
+</a>
+
+
+<a
+href="https://www.facebook.com/"
+target="_blank"
+class="social-card">
+
+    <div class="social-icon">ⓕ</div>
+
+    <h3>Facebook</h3>
+
+    <p>Pap Che Theseus</p>
+
+</a>
+
+
+<a
+href="mailto:theseusfamille@gmaile.com"
+class="social-card">
+
+    <div class="social-icon">✉️</div>
+
+    <h3>E-mail</h3>
+
+    <p>theseusfamille@gmaile.com</p>
+
+</a>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<div class="section-title">
+
+    <small>UNE QUESTION ?</small>
+
+    <h2>Contactez Theseus Design</h2>
+
+</div>
+
+
+<p class="contact-description">
+
+    Pour une commande, un devis ou un projet graphique,
+    contactez-nous directement sur WhatsApp.
+
+</p>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+    <strong>WhatsApp 01</strong>
+
+    <a
+    href="https://wa.me/22361206415"
+    target="_blank">
+
+        +223 61 20 64 15
+
+    </a>
+
+</div>
+
+
+<div class="contact-card">
+
+    <strong>WhatsApp 02</strong>
+
+    <a
+    href="https://wa.me/22373344897"
+    target="_blank">
+
+        +223 73 34 48 97
+
+    </a>
+
+</div>
+
+
+<div class="contact-card full">
+
+    <strong>E-mail</strong>
+
+    <a href="mailto:theseusfamille@gmaile.com">
+
+        theseusfamille@gmaile.com
+
+    </a>
+
+</div>
+
+
+</div>
+
+
+<div class="buttons">
+
+<a
+href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20passer%20une%20commande."
+target="_blank"
+class="btn btn-gold">
+
+    💬 Commander sur WhatsApp
+
+</a>
+
+
+<a
+href="https://www.instagram.com/theseus_design_officiel/"
+target="_blank"
+class="btn btn-outline">
+
+    📸 Instagram
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    © 2026
+    <strong>Theseus Design</strong>.
+    Tous droits réservés.
+
+    <br>
+
+    Création graphique • Sérigraphie • Personnalisation
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/22361206415?text=Bonjour%20Theseus%20Design%2C%20je%20souhaite%20avoir%20des%20informations."
+target="_blank"
+class="whatsapp">
+
+    💬
+
+</a>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("active");
+
+}
+
+
+/* Fermer le menu après avoir cliqué */
+
+document.querySelectorAll(".menu a").forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        document.getElementById("menu").classList.remove("active");
+
+    });
+
+});
+
+</script>
+
+
+</body>
+</html>
